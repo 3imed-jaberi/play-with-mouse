@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title> Play With Mouse : Basic DOM Project </title>
+
+        <!-- CSS styles -->
+        <style>
+            /* put somme description for create the square in the dom .. */
+                #square {
+                            width:100px;
+                            height:100px;
+                            background:red;
+                            z-index:1;
+                            top:0;
+                            left:0;
+                            position:absolute;
+                }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- This is Main Object of DOM ..  -->
+        <div id="square"></div>
+
+
+        <!-- JavaScript scripts -->
+        <script>
+            // Get the square object from the DOM .. 
+            let mySquareObject = document.getElementById("square");
+ 
+            // Put one second for the transition ==> display like movement .. 
+            mySquareObject.style.transition = "all 1s linear";
+
+            // Every click , should be change the object coordinates .. 
+            document.onclick = function () {
+
+                mySquareObject.style.left = event.clientX + "px";
+    
+                mySquareObject.style.top = event.clientY + "px";
+    
+            }
+        </script>
+
+    </body>
+</html>
